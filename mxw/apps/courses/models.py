@@ -16,7 +16,7 @@ class Course(models.Model):
     fav_num = models.IntegerField(default=0, verbose_name='收藏人数')
     image = models.ImageField(upload_to='courses/%Y/%m',verbose_name='封面图')
     click_num = models.IntegerField(default=0,verbose_name='点击量')
-    addtime = models.DateTimeField(default=datetime.now,verbose_name='添加时间')
+    add_time = models.DateTimeField(default=datetime.now,verbose_name='添加时间')
 
     class Meta:
         verbose_name = '课程'
@@ -25,7 +25,7 @@ class Course(models.Model):
 class Lesson(models.Model):
     course = models.ForeignKey(Course,verbose_name='课程')
     name = models.CharField(max_length=100,verbose_name='章节名')
-    addtime = models.DateTimeField(default=datetime.now,verbose_name='添加时间')
+    add_time = models.DateTimeField(default=datetime.now,verbose_name='添加时间')
 
     class Meta:
         verbose_name = '章节'
