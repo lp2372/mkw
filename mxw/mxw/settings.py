@@ -16,7 +16,7 @@ import sys
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 sys.path.insert(0,os.path.join(BASE_DIR,'apps'))
-# sys.path.insert(0,os.path.join(BASE_DIR,'extra_apps'))
+sys.path.insert(0,os.path.join(BASE_DIR,'extra_apps'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -45,15 +45,18 @@ INSTALLED_APPS = (
     'xadmin',
     'crispy_forms',
     'reversion',
+    'captcha'
 
 )
 
 AUTH_USER_MODEL = "users.UserProfile" # 自定义users模型类,应用名。模型类名匹配
 
+AUTHENTICATION_BACKENDS = ('users.views.CustomBacken',) # 自定义authentication
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -89,8 +92,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mxwonline',
         'USER': 'root',
-        'PASSWORD':'mysql',
-        'HOST': '107.182.184.202',
+        'PASSWORD':'12345678',
+        # 'HOST': '107.182.184.202',
+        'HOST': '127.0.0.1',
         'POST':3306
     }
 }
@@ -115,3 +119,12 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_PORT = 25
+#发送邮件的邮箱
+EMAIL_HOST_USER = '18702529877@163.com'
+#在邮箱中设置的客户端授权密码
+EMAIL_HOST_PASSWORD = 'laipeng03141387'
+#收件人看到的发件人
+EMAIL_FROM = '18702529877@163.com'

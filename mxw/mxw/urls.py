@@ -16,6 +16,15 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 import xadmin
+from django.views.generic import TemplateView
+
+from users.views import LoginView,RegisterView,EmailActiveView
+
 urlpatterns = [
     url(r'^xadmin/', include(xadmin.site.urls)),
+    url(r'^$', TemplateView.as_view(template_name='index.html'),name='index'),
+    url(r'^login/$',LoginView.as_view(),name='login'),
+    url(r'^register/$',RegisterView.as_view(),name='register'),
+    url(r'^captcha/', include('captcha.urls')),
+    url(r'^active/(?P<email>.*?)/(?P<active_code>.*)', EmailActiveView.as_view()),
 ]
