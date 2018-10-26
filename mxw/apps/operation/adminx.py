@@ -12,13 +12,13 @@ class UserAskAdmin(object):
 
 class CourseCommentAdmin(object):
     list_display = ['user', 'course', 'comment', 'add_time']
-    search_fields = ['user__name', 'course__name', 'comment']
-    list_filter = ['user__name', 'course__name', 'comment', 'add_time']
+    search_fields = ['user__username', 'course__name', 'comment']
+    list_filter = ['user__username', 'course__name', 'comment', 'add_time']
 
 class UserFavoriteAdmin(object):
     list_display = ['user', 'fav_id', 'fav_type', 'add_time']
-    search_fields = ['user__name', 'fav_id', 'fav_type']
-    list_filter = ['user__name', 'fav_id', 'fav_type', 'add_time']
+    search_fields = ['user__username', 'fav_id', 'fav_type']
+    list_filter = ['user__username', 'fav_id', 'fav_type', 'add_time']
 
 class UserMessageAdmin(object):
     list_display = ['user', 'message', 'has_read', 'add_time']
@@ -27,8 +27,8 @@ class UserMessageAdmin(object):
 
 class UserCourseAdmin(object):
     list_display = ['user', 'course', 'add_time']
-    search_fields = ['user__name', 'course__name']
-    list_filter = ['user__name', 'course__name', 'add_time']
+    search_fields = ['user__username', 'course__name']
+    list_filter = ['user__username', 'course__name', 'add_time']
 
 xadmin.site.register(UserAsk,UserAskAdmin)
 xadmin.site.register(CourseComment,CourseCommentAdmin)

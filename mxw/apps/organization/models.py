@@ -20,6 +20,7 @@ class CityDict(models.Model):
 class CourseOrg(models.Model):
     name = models.CharField(max_length=50,verbose_name='机构名称')
     desc = models.TextField(verbose_name='机构描述')
+    category = models.CharField(verbose_name='机构类别',max_length=50,default='pxjg',choices=(('pxjg',"培训机构"),('gx','高校'),('gr','个人')))
     click_num = models.IntegerField(default=0,verbose_name='点击量')
     fav_num = models.IntegerField(default=0,verbose_name='收藏数')
     image = models.ImageField(upload_to='org/%Y/%m',verbose_name='封面图')

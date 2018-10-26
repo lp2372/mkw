@@ -22,15 +22,15 @@
 
                    <div class="personal">
                         <dl class="user fr">
-                            <dd>admin@admin.com<img class="down fr" src="/static/images/top_down.png"/></dd>
+                            <dd>{{ request.user.username }}<img class="down fr" src="/static/images/top_down.png"/></dd>
                             <dt><img width="20" height="20" src="/uploads/avatar/default_big.png"/></dt>
                         </dl>
                        <div class="userdetail">
                             <dl>
                                 <dt><img width="80" height="80" src="/uploads/avatar/default_big.png"/></dt>
                                 <dd>
-                                    <h2>管理员</h2>
-                                    <p>admin@admin.com</p>
+                                    <h2>{{ request.user.neck_name }}</h2>
+                                    <p>{{ request.user.username }}</p>
                                 </dd>
                             </dl>
                             <div class="btn">
@@ -90,7 +90,7 @@
 							<li class="">
 								<a href="teachers-list.html">授课教师</a>
 							</li>
-							<li ><a href="org-list.html">授课机构</a></li>
+							<li ><a href="{% url 'org_list' %}">授课机构</a></li>
 						</ul>
 					</div>
 				</div>

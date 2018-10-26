@@ -17,8 +17,11 @@ from django.conf.urls import include, url
 from django.contrib import admin
 import xadmin
 from django.views.generic import TemplateView
+from django.views.static import serve
 
-from users.views import LoginView,RegisterView,EmailActiveView
+from users.views import LoginView,RegisterView,EmailActiveView,ForgetPwdView,RestPwdView,ModifyPwdView
+from organization.views import  OrgView
+from mxw.settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^xadmin/', include(xadmin.site.urls)),
@@ -27,4 +30,10 @@ urlpatterns = [
     url(r'^register/$',RegisterView.as_view(),name='register'),
     url(r'^captcha/', include('captcha.urls')),
     url(r'^active/(?P<email>.*?)/(?P<active_code>.*)', EmailActiveView.as_view()),
+    url(r'^forget/$', ForgetPwdView.as_view(),name='forget'),
+    url(r'^forget/(?P<email>.*?)/(?P<active_code>.*)',RestPwdView.as_view(),name='rest_pwd'),
+    url(r'^modify_pwd/$',ModifyPwdView.as_view(),name='modify_pwd'),
+    url(r'^org_list/$',OrgView.as_view(),name='org_list'),
+    #上传文件访问处理函数
+    url(r'^media/(?P<path>.*)',serve,{'document_root':MEDIA_ROOT}),
 ]
