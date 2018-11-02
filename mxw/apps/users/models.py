@@ -11,7 +11,7 @@ class UserProfile(AbstractUser): # 继承django自带的user
     gender = models.CharField(max_length=6,choices=(('male','男'),('female','女')),default='female')
     address = models.CharField(max_length=100,verbose_name='地址',default='')
     mobile = models.CharField(max_length=11,verbose_name='手机号',null=True,blank=True)
-    image = models.ImageField(upload_to="image/%Y%m",default='image/default.png',max_length=100)
+    image = models.ImageField(upload_to="image/%Y/%m",default='image/default.png',max_length=100)
 
     class Meta:
         verbose_name = '用户信息'

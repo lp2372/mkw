@@ -12,90 +12,85 @@
 </head>
 <body>
 <section class="headerwrap ">
-    <header>
+       <header>
 		<div  class=" header">
-          {% if request.user.is_authenticated %}
-              <div class="top">
-               <div class="wp">
-                    <div class="fl"><p>服务电话：<b>33333333</b></p></div>
-                    <!--登录后跳转-->
+ 			<div class="top">
+				<div class="wp">
+					<div class="fl"><p>服务电话：<b>33333333</b></p></div>
+					<!--登录后跳转-->
 
-                   <div class="personal">
-                        <dl class="user fr">
-                            <dd>{{ request.user.username }}<img class="down fr" src="/static/images/top_down.png"/></dd>
-                            <dt><img width="20" height="20" src="/uploads/avatar/default_big.png"/></dt>
-                        </dl>
-                       <div class="userdetail">
-                            <dl>
-                                <dt><img width="80" height="80" src="/uploads/avatar/default_big.png"/></dt>
-                                <dd>
-                                    <h2>{{ request.user.neck_name }}</h2>
-                                    <p>{{ request.user.username }}</p>
-                                </dd>
+                        {% if request.user.is_authenticated %}
+                        <div class="personal">
+                            <dl class="user fr">
+                                <dd>{{ user.username }}<img class="down fr" src=""/></dd>
+                                <dt><img width="20" height="20" src="{{ MEDIA_URL }}{{ request.user.image }}"/></dt>
                             </dl>
-                            <div class="btn">
-                                <a class="personcenter fl" href="usercenter-info.html">进入个人中心</a>
-                                <a class="fr" href="/user/logout/">退出</a>
+                            <div class="userdetail">
+                            	<dl>
+	                                <dt><img width="80" height="80" src="{{ MEDIA_URL }}{{ request.user.image }}"/></dt>
+	                                <dd>
+	                                    <h2>{{ request.user.nick_name }}</h2>
+	                                    <p>{{ request.user.username }}</p>
+	                                </dd>
+                                </dl>
+                                <div class="btn">
+	                                <a class="personcenter fl" href="">进入个人中心</a>
+	                                <a class="fr" href="">退出</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <a href="usercenter-message.html">
-                       <div class="msg-num">20</div>
-                   </a>
+                        <a href="">
+                            <div class="msg-num"> <span id="MsgNum">{{ request.user.unread_nums }}</span></div>
+                        </a>
+                    {% else %}
+                        <a style="color:white" class="fr registerbtn" href="{% url 'register' %}">注册</a>
+                        <a style="color:white" class="fr loginbtn" href="{% url 'login' %}">登录</a>
+                    {% endif %}
 
-               </div>
-          </div>
-            {% else %}
-              <div class="top">
-				<div class="wp">
-					<div class="fl">
-                        <p>联系方式：<b>3333333333</b></p>
-                    </div>
-                    <a style="color:white" class="fr registerbtn" href="{% url 'register' %}">注册</a>
-                    <a style="color:white" class="fr loginbtn" href="/login/">登录</a>
+
 				</div>
 			</div>
-            {% endif %}
 
-            
-			<div class="middle">
-				<div class="wp">
-					<a href="/"><img class="fl" src="/static/images/logo.jpg"/></a>
-					<div class="searchbox fr">
-						<div class="selectContainer fl">
-                            <span class="selectOption" id="jsSelectOption" data-value="group">
+            <div class="middle">
+                <div class="wp">
+                    <a href="/"><img class="fl" src=""/></a>
+                    <div class="searchbox fr">
+                        <div class="selectContainer fl">
+                            <span class="selectOption" id="jsSelectOption" data-value="course">
                                 公开课
                             </span>
                             <ul class="selectMenu" id="jsSelectMenu">
-                                <li data-value="group">公开课</li>
-                                <li data-value="company">课程机构</li>
-                                <li data-value="hk">授课老师</li>
+                                <li data-value="course">公开课</li>
+                                <li data-value="org">课程机构</li>
+                                <li data-value="teacher">授课老师</li>
                             </ul>
-						</div>
-						<input id="search_keywords" class="fl" type="text" value="" placeholder="请输入搜索内容"/>
-						<img class="search_btn fr" id="jsSearchBtn" src="/static/images/search_btn.png"/>
-					</div>
-				</div>
-			</div>
+                        </div>
+                        <input id="search_keywords" class="fl" type="text" value="" placeholder="请输入搜索内容"/>
+                        <img class="search_btn fr" id="jsSearchBtn" src=""/>
+                    </div>
+                </div>
+            </div>
+
+
 			<nav>
 				<div class="nav">
 					<div class="wp">
 						<ul>
-							<li class="active"><a href="index.html">首页</a></li>
-							<li >
-								<a href="course-list.html">
-									公开课<img class="hot" src="/static/images/nav_hot.png">						
+							<li {% if request.path == '/' %}class="active" {% endif %}><a href="{% url 'index' %}">首页</a></li>
+							<li {% if request.path|slice:'7' == '/course' %}class="active"{% endif %}>
+								<a href="{% url 'course:course_list' %}">
+									公开课<img class="hot" src="">
 								</a>
 							</li>
-							<li class="">
-								<a href="teachers-list.html">授课教师</a>
+							<li {% if request.path|slice:'12' == '/org/teacher' %}class="active"{% endif %}>
+								<a href="">授课教师</a>
 							</li>
-							<li ><a href="{% url 'org_list' %}">授课机构</a></li>
+							<li {% if request.path|slice:'9' == '/org/list' %}class="active" {% endif %}><a href="{% url 'org:org_list' %}">授课机构</a></li>
 						</ul>
 					</div>
 				</div>
 			</nav>
-            
+
 			</div>
     </header>
 </section>
@@ -111,31 +106,31 @@
                                         <img width="1200" height="478" class="scrollLoading" data-url="/static/images/57a801860001c34b12000460.jpg" src="/static/images/pixel.gif" />
                                     </a>
                                 </li>
-                            
+
                                 <li>
                                     <a href="">
                                         <img width="1200" height="478" class="scrollLoading" data-url="/static/images/57aa86a0000145c512000460.jpg" src="/static/images/pixel.gif" />
                                     </a>
                                 </li>
-                            
+
                                 <li>
                                     <a href="http://mp.weixin.qq.com/s?__biz=MzIxOTExMDA5OA==&amp;mid=2656196547&amp;idx=1&amp;sn=9a99586fb1b1a01c8b5c0e6c81bd307a&amp;scene=1&amp;srcid=0720EO3WmlldCDYMA6cw8mBp#wechat_redirect">
                                         <img width="1200" height="478" class="scrollLoading" data-url="/static/images/57a801860001c34b12000460.jpg" src="/static/images/pixel.gif" />
                                     </a>
                                 </li>
-                            
+
                                 <li>
                                     <a href="http://www.domile.com.cn/company/19/">
                                         <img width="1200" height="478" class="scrollLoading" data-url="/static/images/57aa86a0000145c512000460.jpg" src="/static/images/pixel.gif" />
                                     </a>
                                 </li>
-                            
+
                                 <li>
                                     <a href="http://www.domile.com.cn/company/19/">
                                         <img width="1200" height="478" class="scrollLoading" data-url="/static/images/57a801860001c34b12000460.jpg" src="/static/images/pixel.gif" />
                                     </a>
                                 </li>
-                            
+
 						</ul>
 					</div>
 					<div class="unslider-arrow prev"></div>
@@ -212,31 +207,31 @@
 						<div class="module1_2 box">
 							<div class="imgslide2">
 								<ul class="imgs">
-                                    
+
                                         <li>
                                             <a href="/group/groupdetail/2/">
                                                 <img width="470" height="300" class="scrollLoading" data-url="/static/images/sass.jpg" src="/static/images/pixel.gif" />
                                             </a>
                                         </li>
-                                    
+
                                         <li>
                                             <a href="/group/groupdetail/3/">
                                                 <img width="470" height="300" class="scrollLoading" data-url="/static/images/sass.jpg" src="/static/images/pixel.gif" />
                                             </a>
                                         </li>
-                                    
+
                                         <li>
                                             <a href="/group/groupdetail/11/">
                                                 <img width="470" height="300" class="scrollLoading" data-url="/static/images/sass.jpg" src="/static/images/pixel.gif" />
                                             </a>
                                         </li>
-                                    
+
 								</ul>
 							</div>
 							<div class="unslider-arrow2 prev"></div>
 							<div class="unslider-arrow2 next"></div>
 						</div>
-                        
+
                             <div class="module1_3 box">
                                 <a href="/group/groupdetail/15/">
                                     <img width="233" height="190" class="scrollLoading" data-url="/static/images/mysql.jpg" src="/static/images/pixel.gif"/>
@@ -253,7 +248,7 @@
                                     <span class="star fr">0</span>
                                 </div>
                             </div>
-                        
+
                             <div class="module1_4 box">
                                 <a href="/group/groupdetail/14/">
                                     <img width="233" height="190" class="scrollLoading" data-url="/static/images/mysql.jpg" src="/static/images/pixel.gif"/>
@@ -270,7 +265,7 @@
                                     <span class="star fr">0</span>
                                 </div>
                             </div>
-                        
+
                             <div class="module1_5 box">
                                 <a href="/group/groupdetail/13/">
                                     <img width="233" height="190" class="scrollLoading" data-url="/static/images/mysql.jpg" src="/static/images/pixel.gif"/>
@@ -287,7 +282,7 @@
                                     <span class="star fr">0</span>
                                 </div>
                             </div>
-                        
+
                             <div class="module1_6 box">
                                 <a href="/group/groupdetail/9/">
                                     <img width="233" height="190" class="scrollLoading" data-url="/static/images/mysql.jpg" src="/static/images/pixel.gif"/>
@@ -304,7 +299,7 @@
                                     <span class="star fr">1</span>
                                 </div>
                             </div>
-                        
+
                             <div class="module1_7 box">
                                 <a href="/group/groupdetail/5/">
                                     <img width="233" height="190" class="scrollLoading" data-url="/static/images/mysql.jpg" src="/static/images/pixel.gif"/>
@@ -321,7 +316,7 @@
                                     <span class="star fr">0</span>
                                 </div>
                             </div>
-                        
+
                             <div class="module1_8 box">
                                 <a href="/group/groupdetail/6/">
                                     <img width="233" height="190" class="scrollLoading" data-url="/static/images/mysql.jpg" src="/static/images/pixel.gif"/>
@@ -369,7 +364,7 @@
                                         <p><span class="key" title="清华大学">清华大学</span></p>
                                     </a>
                                 </li>
-                            
+
                                 <li >
                                     <a href="/company/7/">
                                         <div class="company">
@@ -384,7 +379,7 @@
                                         <p><span class="key" title="慕课网">慕课网</span></p>
                                     </a>
                                 </li>
-                            
+
                                 <li >
                                     <a href="/company/8/">
                                         <div class="company">
@@ -399,7 +394,7 @@
                                         <p><span class="key" title="北京大学">北京大学</span></p>
                                     </a>
                                 </li>
-                            
+
                                 <li >
                                     <a href="/company/19/">
                                         <div class="company">
@@ -414,7 +409,7 @@
                                         <p><span class="key" title="北京大学">北京大学</span></p>
                                     </a>
                                 </li>
-                            
+
                                 <li  class="five">
                                     <a href="/company/22/">
                                         <div class="company">
@@ -429,7 +424,7 @@
                                         <p><span class="key" title="北京大学">北京大学</span></p>
                                     </a>
                                 </li>
-                            
+
                                 <li >
                                     <a href="/company/18/">
                                         <div class="company">
@@ -444,7 +439,7 @@
                                         <p><span class="key" title="北京大学">北京大学</span></p>
                                     </a>
                                 </li>
-                            
+
                                 <li >
                                     <a href="/company/3/">
                                         <div class="company">
@@ -459,7 +454,7 @@
                                         <p><span class="key" title="北京大学">北京大学</span></p>
                                     </a>
                                 </li>
-                            
+
                                 <li >
                                     <a href="/company/4/">
                                         <div class="company">
@@ -474,7 +469,7 @@
                                         <p><span class="key" title="北京大学">北京大学</span></p>
                                     </a>
                                 </li>
-                            
+
                                 <li >
                                     <a href="/company/13/">
                                         <div class="company">
@@ -489,7 +484,7 @@
                                         <p><span class="key" title="北京大学">北京大学</span></p>
                                     </a>
                                 </li>
-                            
+
                                 <li  class="five">
                                     <a href="/company/12/">
                                         <div class="company">
@@ -504,7 +499,7 @@
                                         <p><span class="key" title="北京大学">北京大学</span></p>
                                     </a>
                                 </li>
-                            
+
                                 <li >
                                     <a href="/company/15/">
                                         <div class="company">
@@ -519,7 +514,7 @@
                                         <p><span class="key" title="北京大学">北京大学</span></p>
                                     </a>
                                 </li>
-                            
+
                                 <li >
                                     <a href="/company/11/">
                                         <div class="company">
@@ -534,7 +529,7 @@
                                         <p><span class="key" title="北京大学">北京大学</span></p>
                                     </a>
                                 </li>
-                            
+
                                 <li >
                                     <a href="/company/9/">
                                         <div class="company">
@@ -549,7 +544,7 @@
                                         <p><span class="key" title="北京大学">南京大学</span></p>
                                     </a>
                                 </li>
-                            
+
                                 <li >
                                     <a href="/company/6/">
                                         <div class="company">
@@ -564,7 +559,7 @@
                                         <p><span class="key" title="北京大学">北京大学</span></p>
                                     </a>
                                 </li>
-                            
+
                                 <li  class="five">
                                     <a href="/company/5/">
                                         <div class="company">

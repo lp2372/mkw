@@ -33,7 +33,10 @@ urlpatterns = [
     url(r'^forget/$', ForgetPwdView.as_view(),name='forget'),
     url(r'^forget/(?P<email>.*?)/(?P<active_code>.*)',RestPwdView.as_view(),name='rest_pwd'),
     url(r'^modify_pwd/$',ModifyPwdView.as_view(),name='modify_pwd'),
-    url(r'^org_list/$',OrgView.as_view(),name='org_list'),
+
+    url(r'^org/',include('organization.urls',namespace='org')),
     #上传文件访问处理函数
     url(r'^media/(?P<path>.*)',serve,{'document_root':MEDIA_ROOT}),
+
+    url(r'^course/',include('courses.urls',namespace='course')),
 ]

@@ -45,7 +45,8 @@ INSTALLED_APPS = (
     'xadmin',
     'crispy_forms',
     'reversion',
-    'captcha'
+    'captcha',
+    'pure_pagination',
 
 )
 
@@ -56,7 +57,7 @@ AUTHENTICATION_BACKENDS = ('users.views.CustomBacken',) # 自定义authenticatio
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -77,7 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.core.context_processors.media',
+                'django.core.context_processors.media',  # media配置　{{ meida }}才会生效
             ],
         },
     },
@@ -132,3 +133,11 @@ EMAIL_HOST_USER = '18702529877@163.com'
 EMAIL_HOST_PASSWORD = 'laipeng03141387'
 #收件人看到的发件人
 EMAIL_FROM = '18702529877@163.com'
+
+#分页设置
+PAGINATION_SETTINGS = {
+    'PAGE_RANGE_DISPLAYED': 10,
+    'MARGIN_PAGES_DISPLAYED': 2,
+
+    'SHOW_FIRST_PAGE_WHEN_INVALID': True,
+}

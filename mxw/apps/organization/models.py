@@ -26,6 +26,8 @@ class CourseOrg(models.Model):
     image = models.ImageField(upload_to='org/%Y/%m',verbose_name='封面图')
     address = models.CharField(max_length=150,verbose_name='地址')
     city = models.ForeignKey(CityDict,verbose_name='所在城市')
+    students = models.IntegerField(default=0,verbose_name='学习人数')
+    course_nums = models.IntegerField(default=0,verbose_name='课程数')
     add_time = models.DateTimeField(default=datetime.now,verbose_name='添加时间')
 
     class Meta:
@@ -34,6 +36,9 @@ class CourseOrg(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_teacher_num(self):
+        return self.teacher_set.all().count()
 
 
 class Teacher(models.Model):
@@ -46,6 +51,7 @@ class Teacher(models.Model):
     click_num = models.IntegerField(default=0,verbose_name='点击量')
     fav_num = models.IntegerField(default=0,verbose_name='收藏数')
     add_time = models.DateTimeField(default=datetime.now)
+    image = models.ImageField(upload_to="teacher/%Y/%m",verbose_name='教师头像',null=True,blank=True)
 
     class Meta:
         verbose_name = '教师'
