@@ -11,7 +11,7 @@
  Target Server Version : 50724
  File Encoding         : 65001
 
- Date: 02/11/2018 17:22:26
+ Date: 09/11/2018 18:22:23
 */
 
 SET NAMES utf8mb4;
@@ -181,7 +181,7 @@ CREATE TABLE `captcha_captchastore`  (
   `expiration` datetime(6) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `hashkey`(`hashkey`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 153 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 154 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of captcha_captchastore
@@ -190,6 +190,7 @@ INSERT INTO `captcha_captchastore` VALUES (148, 'RRJA', 'rrja', 'd4938a887248a3d
 INSERT INTO `captcha_captchastore` VALUES (149, 'FPVJ', 'fpvj', '762185a3e670246e312af39cce03191582458a1a', '2018-10-24 11:29:14.399010');
 INSERT INTO `captcha_captchastore` VALUES (151, 'TFLV', 'tflv', '8b01fbb0ad9fecfb6c1bfd707d28c9fa0b3de22a', '2018-10-24 11:29:25.389424');
 INSERT INTO `captcha_captchastore` VALUES (152, 'RDLR', 'rdlr', '164616120f00b68a8b9aa05e88b1058ade41462a', '2018-10-24 11:29:25.390805');
+INSERT INTO `captcha_captchastore` VALUES (153, 'JDKR', 'jdkr', '801bdb9fa24cb9bab35d4449ba31c4b6c78e2e6b', '2018-11-03 21:03:33.075892');
 
 -- ----------------------------
 -- Table structure for courses_course
@@ -223,19 +224,19 @@ CREATE TABLE `courses_course`  (
 -- ----------------------------
 -- Records of courses_course
 -- ----------------------------
-INSERT INTO `courses_course` VALUES (1, 'django与vue', '基础入门', '简单入门知识', 'cj', 30, 11, 7, 'courses/2018/10/540e57300001d6d906000338-240-135.jpg', 15, '2018-10-18 09:25:00.000000', 2, '后端开发', 'java', 1, '你能学会django的基本使用', '你至少需要python基础');
-INSERT INTO `courses_course` VALUES (2, 'java入门', '基础java', 'java', 'zj', 12, 2, 8, 'courses/2018/10/57035ff200014b8a06000338-240-135_0nFiBSI.jpg', 0, '2018-10-29 16:24:00.000000', 2, '后端开发', '', NULL, '', '');
-INSERT INTO `courses_course` VALUES (3, 'mysql 数据库', 'mysql 数据库', 'mysql 数据库mysql 数据库mysql 数据库mysql 数据库mysql 数据库', 'cj', 12, 5, 7, 'courses/2018/10/mysql.jpg', 44, '2018-10-30 10:33:00.000000', 5, '后端开发', '', NULL, '', '');
-INSERT INTO `courses_course` VALUES (4, 'python 文件处理', 'python 文件处理', 'python 文件处理python 文件处理python 文件处理python 文件处理python 文件处理python 文件处理python 文件处理python 文件处理python 文件处理python 文件处理', 'zj', 34, 12, 23, 'courses/2018/10/python3.jpg', 23, '2018-10-30 10:35:00.000000', 5, '后端开发', '', NULL, '', '');
-INSERT INTO `courses_course` VALUES (5, 'python 错误异常', '搜索', 'python 错误异常python 错误异常python 错误异常', 'zj', 56, 12, 12, 'courses/2018/10/python.jpg', 12, '2018-10-30 10:42:00.000000', 4, '后端开发', '', NULL, '', '');
+INSERT INTO `courses_course` VALUES (1, 'django与vue', '基础入门', '简单入门知识', 'cj', 30, 14, 7, 'courses/2018/10/540e57300001d6d906000338-240-135.jpg', 29, '2018-10-18 09:25:00.000000', 2, '后端开发', 'java', 1, '你能学会django的基本使用', '你至少需要python基础');
+INSERT INTO `courses_course` VALUES (2, 'java入门', '基础java', 'java', 'zj', 12, 2, 8, 'courses/2018/10/57035ff200014b8a06000338-240-135_0nFiBSI.jpg', 1, '2018-10-29 16:24:00.000000', 2, '后端开发', '', NULL, '', '');
+INSERT INTO `courses_course` VALUES (3, 'mysql 数据库', 'mysql 数据库', 'mysql 数据库mysql 数据库mysql 数据库mysql 数据库mysql 数据库', 'cj', 12, 5, 8, 'courses/2018/10/mysql.jpg', 46, '2018-10-30 10:33:00.000000', 5, '后端开发', '', NULL, '', '');
+INSERT INTO `courses_course` VALUES (4, 'python 文件处理', 'python 文件处理', 'python 文件处理python 文件处理python 文件处理python 文件处理python 文件处理python 文件处理python 文件处理python 文件处理python 文件处理python 文件处理', 'zj', 34, 12, 24, 'courses/2018/10/python3.jpg', 24, '2018-10-30 10:35:00.000000', 5, '后端开发', '', NULL, '', '');
+INSERT INTO `courses_course` VALUES (5, 'python 错误异常', '搜索', 'python 错误异常python 错误异常python 错误异常', 'zj', 56, 13, 12, 'courses/2018/10/python.jpg', 14, '2018-10-30 10:42:00.000000', 4, '后端开发', '', NULL, '', '');
 INSERT INTO `courses_course` VALUES (6, '面向对象', '类与对象', '面向对象面向对象面向对象面向对象面向对象面向对象面向对象面向对象', 'gj', 45, 12, 45, 'courses/2018/10/python1.jpg', 35, '2018-10-30 10:43:00.000000', 3, '后端开发', '', NULL, '', '');
 INSERT INTO `courses_course` VALUES (7, 'python入门１', 'python入门１', 'python入门１python入门１python入门１python入门１python入门１python入门１python入门１', 'cj', 23, 12, 23, 'courses/2018/10/540e57300001d6d906000338-240-135_mvvGYHL.jpg', 13, '2018-10-30 10:44:00.000000', 6, '后端开发', '', NULL, '', '');
 INSERT INTO `courses_course` VALUES (8, 'python入门2', 'python入门2', 'python入门2python入门2python入门2python入门2python入门2python入门2python入门2python入门2python入门2python入门2python入门2python入门2python入门2python入门2python入门2python入门2', 'gj', 45, 11, 23, 'courses/2018/10/540e57300001d6d906000338-240-135_mvvGYHL_mk3CdvS.jpg', 23, '2018-10-30 10:45:00.000000', 10, '后端开发', '', NULL, '', '');
 INSERT INTO `courses_course` VALUES (9, 'dajngo', 'dajngo', 'dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo dajngo', 'gj', 67, 123, 234, 'courses/2018/10/540e57300001d6d906000338-240-135_Z3HIQ2t.jpg', 23, '2018-10-30 10:46:00.000000', 11, '后端开发', '', NULL, '', '');
-INSERT INTO `courses_course` VALUES (10, 'Flask', 'Flask', 'FlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlask', 'gj', 56, 78, 234, 'courses/2018/10/540e57300001d6d906000338-240-135_wH52IED.jpg', 12, '2018-10-30 10:47:00.000000', 8, '后端开发', '', NULL, '', '');
-INSERT INTO `courses_course` VALUES (11, 'scrapy', 'scrapy', 'scrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapy', 'gj', 66, 123, 34, 'courses/2018/10/540e57300001d6d906000338-240-135_MSIqfvw.jpg', 12, '2018-10-30 10:47:00.000000', 3, '后端开发', '', NULL, '', '');
-INSERT INTO `courses_course` VALUES (12, 'numpy', 'numpy', 'numpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpy', 'gj', 90, 123, 234, 'courses/2018/10/python1_CoieddA.jpg', 1234, '2018-10-30 10:49:00.000000', 2, '后端开发', '', NULL, '', '');
-INSERT INTO `courses_course` VALUES (13, 'java入门1', 'java入门1', 'java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1', 'zj', 56, 2, 13, 'courses/2018/10/57035ff200014b8a06000338-240-135_dHfj8Nq.jpg', 166, '2018-10-30 10:55:00.000000', 2, '后端开发', 'java', NULL, '', '');
+INSERT INTO `courses_course` VALUES (10, 'Flask', 'Flask', 'FlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlaskFlask', 'gj', 56, 78, 235, 'courses/2018/10/540e57300001d6d906000338-240-135_wH52IED.jpg', 14, '2018-10-30 10:47:00.000000', 8, '后端开发', 'zxnjzasa', 2, 'asdasdasd', 'sdasdasd');
+INSERT INTO `courses_course` VALUES (11, 'scrapy', 'scrapy', 'scrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapyscrapy', 'gj', 66, 124, 34, 'courses/2018/10/540e57300001d6d906000338-240-135_MSIqfvw.jpg', 16, '2018-10-30 10:47:00.000000', 3, '后端开发', '爬虫', 2, '爬虫框架', '爬虫基础');
+INSERT INTO `courses_course` VALUES (12, 'numpy', 'numpy', 'numpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpynumpy', 'gj', 90, 124, 234, 'courses/2018/10/python1_CoieddA.jpg', 1236, '2018-10-30 10:49:00.000000', 2, '后端开发', 'python', 2, '数据分析', 'heiheiheo');
+INSERT INTO `courses_course` VALUES (13, 'java入门1', 'java入门1', 'java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1java入门1', 'zj', 56, 2, 13, 'courses/2018/10/57035ff200014b8a06000338-240-135_dHfj8Nq.jpg', 174, '2018-10-30 10:55:00.000000', 2, '后端开发', 'java', 1, 'java 你要会', 'java 你要会');
 
 -- ----------------------------
 -- Table structure for courses_courseresource
@@ -299,10 +300,10 @@ CREATE TABLE `courses_viedo`  (
 -- ----------------------------
 -- Records of courses_viedo
 -- ----------------------------
-INSERT INTO `courses_viedo` VALUES (1, '1.1 hello word', '2018-10-30 19:41:00.000000', 3, 'http://www.imooc.com/viedo/1430', 0);
-INSERT INTO `courses_viedo` VALUES (2, '1.2基本概念', '2018-10-30 19:44:00.000000', 3, 'http://www.imooc.com/viedo/1430', 0);
-INSERT INTO `courses_viedo` VALUES (3, '2.1 test1', '2018-10-30 19:45:00.000000', 2, 'http://www.imooc.com/viedo/1430', 0);
-INSERT INTO `courses_viedo` VALUES (4, '2.2 test2', '2018-10-30 19:45:00.000000', 2, 'http://www.imooc.com/viedo/1430', 0);
+INSERT INTO `courses_viedo` VALUES (1, '1.1 hello word', '2018-10-30 19:41:00.000000', 3, 'http://phnqzsmrw.bkt.clouddn.com/11-1.mp4', 0);
+INSERT INTO `courses_viedo` VALUES (2, '1.2基本概念', '2018-10-30 19:44:00.000000', 3, 'http://phnqzsmrw.bkt.clouddn.com/11-1.mp4', 0);
+INSERT INTO `courses_viedo` VALUES (3, '2.1 test1', '2018-10-30 19:45:00.000000', 2, 'http://phnqzsmrw.bkt.clouddn.com/11-1.mp4', 0);
+INSERT INTO `courses_viedo` VALUES (4, '2.2 test2', '2018-10-30 19:45:00.000000', 2, 'http://phnqzsmrw.bkt.clouddn.com/11-1.mp4', 0);
 INSERT INTO `courses_viedo` VALUES (5, '3.1 django app设计', '2018-10-30 19:45:00.000000', 4, 'http://www.imooc.com/viedo/1430', 2);
 INSERT INTO `courses_viedo` VALUES (6, '3.2 django model设计', '2018-10-30 19:46:00.000000', 4, 'http://www.imooc.com/viedo/1430', 0);
 INSERT INTO `courses_viedo` VALUES (7, '3.3 django user设计', '2018-10-30 19:46:00.000000', 4, 'http://www.imooc.com/viedo/1430', 1);
@@ -383,7 +384,7 @@ CREATE TABLE `django_migrations`  (
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of django_migrations
@@ -424,6 +425,7 @@ INSERT INTO `django_migrations` VALUES (33, 'courses', '0007_viedo_learn_time', 
 INSERT INTO `django_migrations` VALUES (35, 'courses', '0002_course_abc', '2018-10-30 21:05:19.658821');
 INSERT INTO `django_migrations` VALUES (36, 'courses', '0003_auto_20181030_2107', '2018-10-30 21:07:09.949196');
 INSERT INTO `django_migrations` VALUES (37, 'courses', '0004_auto_20181030_2113', '2018-10-30 21:13:19.872536');
+INSERT INTO `django_migrations` VALUES (38, 'organization', '0002_teacher_age', '2018-11-04 16:13:49.547902');
 
 -- ----------------------------
 -- Table structure for django_session
@@ -442,15 +444,16 @@ CREATE TABLE `django_session`  (
 -- ----------------------------
 INSERT INTO `django_session` VALUES ('30440hvy0lkpi7xa8tp7lcxf7g14hotw', 'ZDk4MWQxYTA1ZjAzYWYwNTNiZWQwYjdjYmE5ZjM0ODA4OTA5ZTBlOTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InVzZXJzLnZpZXdzLkN1c3RvbUJhY2tlbiIsIl9hdXRoX3VzZXJfaGFzaCI6IjhjZjM4OTY1Mjc4ZWVhODA0MzFhMTZjZjJlZmQzNWVmNTQwNmVmYzYiLCJfYXV0aF91c2VyX2lkIjoiMTAifQ==', '2018-11-07 11:27:14.533268');
 INSERT INTO `django_session` VALUES ('3hj5ef7o6gtvfxgjhovpwn8zlv30kz9c', 'YWY1YzUyZDM3MmZlMzViZGQzM2JkYzU5NTBlMmE5MTNmNWZiNmU5Zjp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InVzZXJzLnZpZXdzLkN1c3RvbUJhY2tlbiIsIl9hdXRoX3VzZXJfaGFzaCI6ImY0NWRlOTYwYzI3MmUyOWYxMTIwMTlmMGY4ZGE2YWE3MGIyZDdhOGUiLCJfYXV0aF91c2VyX2lkIjoiMSJ9', '2018-11-01 17:15:56.844942');
+INSERT INTO `django_session` VALUES ('55k25z8g59dsexexpk32edj8jch6cpt4', 'OTVhNzZkYTRiM2JlNDU2MzRkMTZkMDYwNTA1YmE4MmRlZDcwOWYwZTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InVzZXJzLnZpZXdzLkN1c3RvbUJhY2tlbiIsIl9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9oYXNoIjoiMDA5NWE4NmVlMzdlMzg2ZjJiMzQxNDdjM2Y2MDdmNmUyZGM2Y2MwYiJ9', '2018-11-23 09:26:47.915158');
 INSERT INTO `django_session` VALUES ('6bf7vcvnj951jkrma9q9kwqk3g7b1fpi', 'YjllZTQ5Nzc4OTNmY2IwZDg2ZmI2NjM5ZDQyZTgyNDVhYTU4N2I5ZDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoidXNlcnMudmlld3MuQ3VzdG9tQmFja2VuIiwiTElTVF9RVUVSWSI6W1sidXNlcnMiLCJ1c2VycHJvZmlsZSJdLCIiXSwiX2F1dGhfdXNlcl9oYXNoIjoiZjQ1ZGU5NjBjMjcyZTI5ZjExMjAxOWYwZjhkYTZhYTcwYjJkN2E4ZSJ9', '2018-11-02 17:17:44.646829');
 INSERT INTO `django_session` VALUES ('74wsxanh13c5irvvq7h2mq75tsz40o6l', 'Nzk3NzRmOWQ2ZWE2Y2IwYTEzMTc2OWRhY2E3MWMyZDk1Yjg1MTg2Zjp7Il9hdXRoX3VzZXJfaWQiOiIxMCIsIl9hdXRoX3VzZXJfaGFzaCI6IjEwNzdlOWFkYmMxMmNhZDUyNGMyZThkODkxYTU5YzdhMGYxM2JhZTciLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJ1c2Vycy52aWV3cy5DdXN0b21CYWNrZW4ifQ==', '2018-11-07 14:46:30.523437');
 INSERT INTO `django_session` VALUES ('7w0x6jepvymsx7iwp3bmkn5tdcm8x02a', 'NmYwNjU3M2Q0NGQxNDA4NGU1ZjAwMzRjYjE5M2ExYjRhOGViOTcwZTp7Il9hdXRoX3VzZXJfaGFzaCI6IjhjZjM4OTY1Mjc4ZWVhODA0MzFhMTZjZjJlZmQzNWVmNTQwNmVmYzYiLCJfYXV0aF91c2VyX2lkIjoiMTAiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJ1c2Vycy52aWV3cy5DdXN0b21CYWNrZW4ifQ==', '2018-11-07 11:27:29.675767');
+INSERT INTO `django_session` VALUES ('85jcza2wk0flgegkm0eb0288mm87k9uz', 'ZjgwNzgyMTJhYzNmYTc5YWEzNmQzNDRmZGJhMDEwZjBhNzMxMDg4MTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoidXNlcnMudmlld3MuQ3VzdG9tQmFja2VuIiwiTElTVF9RVUVSWSI6W1sib3JnYW5pemF0aW9uIiwidGVhY2hlciJdLCIiXSwiX2F1dGhfdXNlcl9oYXNoIjoiZjQ1ZGU5NjBjMjcyZTI5ZjExMjAxOWYwZjhkYTZhYTcwYjJkN2E4ZSJ9', '2018-11-18 17:45:09.666462');
 INSERT INTO `django_session` VALUES ('97o548fgf8tg9e1lqkpd902q6hhoog8x', 'OTAwNzJkZjViZTRhY2VlMTYwNWExNGFmOTM5Nzc3Y2M0MzAzOGRlZTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InVzZXJzLnZpZXdzLkN1c3RvbUJhY2tlbiIsIl9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9oYXNoIjoiZjQ1ZGU5NjBjMjcyZTI5ZjExMjAxOWYwZjhkYTZhYTcwYjJkN2E4ZSJ9', '2018-11-01 17:03:04.042055');
 INSERT INTO `django_session` VALUES ('a85v15wknwjpk5emovxtsn77rsm0vqyq', 'YWY1YzUyZDM3MmZlMzViZGQzM2JkYzU5NTBlMmE5MTNmNWZiNmU5Zjp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InVzZXJzLnZpZXdzLkN1c3RvbUJhY2tlbiIsIl9hdXRoX3VzZXJfaGFzaCI6ImY0NWRlOTYwYzI3MmUyOWYxMTIwMTlmMGY4ZGE2YWE3MGIyZDdhOGUiLCJfYXV0aF91c2VyX2lkIjoiMSJ9', '2018-11-01 16:45:58.182934');
 INSERT INTO `django_session` VALUES ('bbp5uk7j7zflj3bvnb9xvmqc5y4iz635', 'NDlhNmY2MTlmMzI0NzQ3MGVjZjc4Y2Y5NTkxMDU1ODE4ZmZlZjMzNDp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJfYXV0aF91c2VyX2hhc2giOiJmNDVkZTk2MGMyNzJlMjlmMTEyMDE5ZjBmOGRhNmFhNzBiMmQ3YThlIn0=', '2018-11-01 16:09:05.387661');
 INSERT INTO `django_session` VALUES ('ddh0bp6v6758tbo7kd4z953ve11cr0v9', 'OTAwNzJkZjViZTRhY2VlMTYwNWExNGFmOTM5Nzc3Y2M0MzAzOGRlZTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InVzZXJzLnZpZXdzLkN1c3RvbUJhY2tlbiIsIl9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9oYXNoIjoiZjQ1ZGU5NjBjMjcyZTI5ZjExMjAxOWYwZjhkYTZhYTcwYjJkN2E4ZSJ9', '2018-11-01 17:05:09.446227');
 INSERT INTO `django_session` VALUES ('evnzpx87wq8fgavfjdwp7vajveqagvd7', 'MDQwNDFkZWZmN2M3OTlkZTlmZmM0YTFjYzQxNWVmOWNlMzJlMGJjMDp7Il9hdXRoX3VzZXJfaGFzaCI6ImY0NWRlOTYwYzI3MmUyOWYxMTIwMTlmMGY4ZGE2YWE3MGIyZDdhOGUiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJ1c2Vycy52aWV3cy5DdXN0b21CYWNrZW4iLCJfYXV0aF91c2VyX2lkIjoiMSJ9', '2018-11-01 19:55:41.974255');
-INSERT INTO `django_session` VALUES ('fy7n9rw2umd1f9rro1h8f1o0e26jfjqj', 'OGMxYzM3OWY1ZTNiYzMzNGUxYjA2NzJkZDcwNzc0OTExNmRmZmMxNzp7Il9hdXRoX3VzZXJfaGFzaCI6ImY0NWRlOTYwYzI3MmUyOWYxMTIwMTlmMGY4ZGE2YWE3MGIyZDdhOGUiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJ1c2Vycy52aWV3cy5DdXN0b21CYWNrZW4iLCJMSVNUX1FVRVJZIjpbWyJjb3Vyc2VzIiwiY291cnNlIl0sIiJdLCJfYXV0aF91c2VyX2lkIjoiMSJ9', '2018-11-13 21:08:01.622910');
 INSERT INTO `django_session` VALUES ('jzpnew5d764emlfc8597rahy8gjuo6jk', 'ZDk4MWQxYTA1ZjAzYWYwNTNiZWQwYjdjYmE5ZjM0ODA4OTA5ZTBlOTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InVzZXJzLnZpZXdzLkN1c3RvbUJhY2tlbiIsIl9hdXRoX3VzZXJfaGFzaCI6IjhjZjM4OTY1Mjc4ZWVhODA0MzFhMTZjZjJlZmQzNWVmNTQwNmVmYzYiLCJfYXV0aF91c2VyX2lkIjoiMTAifQ==', '2018-11-07 11:26:26.009084');
 INSERT INTO `django_session` VALUES ('kn1vtp54olxl6qhvcdanjvvfmmy79p96', 'YWY1YzUyZDM3MmZlMzViZGQzM2JkYzU5NTBlMmE5MTNmNWZiNmU5Zjp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InVzZXJzLnZpZXdzLkN1c3RvbUJhY2tlbiIsIl9hdXRoX3VzZXJfaGFzaCI6ImY0NWRlOTYwYzI3MmUyOWYxMTIwMTlmMGY4ZGE2YWE3MGIyZDdhOGUiLCJfYXV0aF91c2VyX2lkIjoiMSJ9', '2018-11-01 16:45:30.890863');
 INSERT INTO `django_session` VALUES ('mm7juqgiaucmuayyd0q1coutlwanbxms', 'ZDk4MWQxYTA1ZjAzYWYwNTNiZWQwYjdjYmE5ZjM0ODA4OTA5ZTBlOTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InVzZXJzLnZpZXdzLkN1c3RvbUJhY2tlbiIsIl9hdXRoX3VzZXJfaGFzaCI6IjhjZjM4OTY1Mjc4ZWVhODA0MzFhMTZjZjJlZmQzNWVmNTQwNmVmYzYiLCJfYXV0aF91c2VyX2lkIjoiMTAifQ==', '2018-11-07 11:27:39.327389');
@@ -460,6 +463,7 @@ INSERT INTO `django_session` VALUES ('ps8ultaqn1ma23bshdpy9wol8av8871h', 'OTAwNz
 INSERT INTO `django_session` VALUES ('srse25t9x0wj9m7i86f4sowcwpun966s', 'OWRlM2I0YzI2NGQ0NDc4YjQwM2MxMmRjOGRkYTZkODhkMDcxNjFmODp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InVzZXJzLnZpZXdzLkN1c3RvbUJhY2tlbiIsIl9hdXRoX3VzZXJfaGFzaCI6IjEwNzdlOWFkYmMxMmNhZDUyNGMyZThkODkxYTU5YzdhMGYxM2JhZTciLCJfYXV0aF91c2VyX2lkIjoiMTAifQ==', '2018-11-07 11:29:22.106408');
 INSERT INTO `django_session` VALUES ('sys9p1j61bfhjbnec3rd9qwl2m1xssba', 'N2RiODM1ODA0MmFhNjdkZmVmYjQ1YzZkNzZjMDcyN2FmNDc4NzQ3OTp7Il9hdXRoX3VzZXJfaGFzaCI6ImY0NWRlOTYwYzI3MmUyOWYxMTIwMTlmMGY4ZGE2YWE3MGIyZDdhOGUiLCJfYXV0aF91c2VyX2lkIjoiMSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6InVzZXJzLnZpZXdzLkN1c3RvbUJhY2tlbiJ9', '2018-11-01 16:50:41.647315');
 INSERT INTO `django_session` VALUES ('t4yi6hid7kwhog2q1e2vvrca612indgo', 'OWRlM2I0YzI2NGQ0NDc4YjQwM2MxMmRjOGRkYTZkODhkMDcxNjFmODp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InVzZXJzLnZpZXdzLkN1c3RvbUJhY2tlbiIsIl9hdXRoX3VzZXJfaGFzaCI6IjEwNzdlOWFkYmMxMmNhZDUyNGMyZThkODkxYTU5YzdhMGYxM2JhZTciLCJfYXV0aF91c2VyX2lkIjoiMTAifQ==', '2018-11-07 11:29:49.055900');
+INSERT INTO `django_session` VALUES ('u5xj1m3rduvm8nzndojqu13od70vabqd', 'MzllMTk2MjNiZTNjOTRiZDQxYmU2ZmZlYjJmODM2YWEzZjM3NDU1MDp7Il9hdXRoX3VzZXJfaGFzaCI6IjAwOTVhODZlZTM3ZTM4NmYyYjM0MTQ3YzNmNjA3ZjZlMmRjNmNjMGIiLCJfYXV0aF91c2VyX2lkIjoiMSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6InVzZXJzLnZpZXdzLkN1c3RvbUJhY2tlbiIsIkxJU1RfUVVFUlkiOltbImNvdXJzZXMiLCJjb3Vyc2UiXSwiIl19', '2018-11-22 10:06:58.685714');
 INSERT INTO `django_session` VALUES ('ugcv3lqhs0mlv9l7lna7yc8ymu43tcvq', 'OWRlM2I0YzI2NGQ0NDc4YjQwM2MxMmRjOGRkYTZkODhkMDcxNjFmODp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InVzZXJzLnZpZXdzLkN1c3RvbUJhY2tlbiIsIl9hdXRoX3VzZXJfaGFzaCI6IjEwNzdlOWFkYmMxMmNhZDUyNGMyZThkODkxYTU5YzdhMGYxM2JhZTciLCJfYXV0aF91c2VyX2lkIjoiMTAifQ==', '2018-11-07 11:30:06.507503');
 INSERT INTO `django_session` VALUES ('ul84h16dkw59wacxlo07xkkjhj9heu80', 'N2RiODM1ODA0MmFhNjdkZmVmYjQ1YzZkNzZjMDcyN2FmNDc4NzQ3OTp7Il9hdXRoX3VzZXJfaGFzaCI6ImY0NWRlOTYwYzI3MmUyOWYxMTIwMTlmMGY4ZGE2YWE3MGIyZDdhOGUiLCJfYXV0aF91c2VyX2lkIjoiMSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6InVzZXJzLnZpZXdzLkN1c3RvbUJhY2tlbiJ9', '2018-11-01 16:52:06.798620');
 INSERT INTO `django_session` VALUES ('zc1nz61wpba96pcj32jcrtzqqw69gbpb', 'N2Q4YTVhYzE3ZmJhYzA0YzMzNjFlMmFlYjhmMzE0ODEzNjA5YWVjYjp7IkxJU1RfUVVFUlkiOltbInVzZXJzIiwidXNlcnByb2ZpbGUiXSwiIl0sIl9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9oYXNoIjoiZjQ1ZGU5NjBjMjcyZTI5ZjExMjAxOWYwZjhkYTZhYTcwYjJkN2E4ZSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=', '2018-11-01 16:09:41.982746');
@@ -480,13 +484,15 @@ CREATE TABLE `operation_coursecomment`  (
   INDEX `operation_coursecomment_user_id_8f3ff0f8_fk_users_userprofile_id`(`user_id`) USING BTREE,
   CONSTRAINT `operation_coursecomment_course_id_ae7551b0_fk_courses_course_id` FOREIGN KEY (`course_id`) REFERENCES `courses_course` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `operation_coursecomment_user_id_8f3ff0f8_fk_users_userprofile_id` FOREIGN KEY (`user_id`) REFERENCES `users_userprofile` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of operation_coursecomment
 -- ----------------------------
 INSERT INTO `operation_coursecomment` VALUES (1, '讲的太好了', '2018-11-01 11:44:24.311648', 1, 1);
 INSERT INTO `operation_coursecomment` VALUES (2, '你好啊', '2018-11-01 11:48:27.057164', 1, 1);
+INSERT INTO `operation_coursecomment` VALUES (3, 'ff', '2018-11-03 20:04:29.537238', 1, 1);
+INSERT INTO `operation_coursecomment` VALUES (4, 'heihei', '2018-11-03 20:05:53.416036', 1, 1);
 
 -- ----------------------------
 -- Table structure for operation_userask
@@ -526,13 +532,17 @@ CREATE TABLE `operation_usercourse`  (
   INDEX `operation_usercourse_user_id_835fe81a_fk_users_userprofile_id`(`user_id`) USING BTREE,
   CONSTRAINT `operation_usercourse_course_id_9f1eab2e_fk_courses_course_id` FOREIGN KEY (`course_id`) REFERENCES `courses_course` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `operation_usercourse_user_id_835fe81a_fk_users_userprofile_id` FOREIGN KEY (`user_id`) REFERENCES `users_userprofile` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of operation_usercourse
 -- ----------------------------
 INSERT INTO `operation_usercourse` VALUES (1, '2018-10-30 15:08:49.000000', 13, 1);
 INSERT INTO `operation_usercourse` VALUES (2, '2018-10-30 15:09:07.000000', 13, 6);
+INSERT INTO `operation_usercourse` VALUES (3, '2018-11-03 20:45:49.721768', 1, 1);
+INSERT INTO `operation_usercourse` VALUES (4, '2018-11-03 20:48:20.869448', 12, 1);
+INSERT INTO `operation_usercourse` VALUES (5, '2018-11-03 20:54:07.752837', 11, 1);
+INSERT INTO `operation_usercourse` VALUES (6, '2018-11-07 17:45:18.254590', 5, 1);
 
 -- ----------------------------
 -- Table structure for operation_userfavorite
@@ -547,14 +557,22 @@ CREATE TABLE `operation_userfavorite`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `operation_userfavorite_user_id_ad46a6af_fk_users_userprofile_id`(`user_id`) USING BTREE,
   CONSTRAINT `operation_userfavorite_user_id_ad46a6af_fk_users_userprofile_id` FOREIGN KEY (`user_id`) REFERENCES `users_userprofile` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 51 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of operation_userfavorite
 -- ----------------------------
 INSERT INTO `operation_userfavorite` VALUES (10, 3, 3, '2018-10-30 16:11:56.643032', 1);
-INSERT INTO `operation_userfavorite` VALUES (18, 2, 2, '2018-10-30 17:31:18.595768', 1);
 INSERT INTO `operation_userfavorite` VALUES (19, 13, 1, '2018-10-30 17:31:26.224972', 1);
+INSERT INTO `operation_userfavorite` VALUES (42, 1, 3, '2018-11-04 19:17:37.640511', 1);
+INSERT INTO `operation_userfavorite` VALUES (43, 3, 2, '2018-11-08 09:30:05.414119', 1);
+INSERT INTO `operation_userfavorite` VALUES (44, 5, 2, '2018-11-08 09:30:10.794155', 1);
+INSERT INTO `operation_userfavorite` VALUES (45, 9, 2, '2018-11-08 09:30:18.813345', 1);
+INSERT INTO `operation_userfavorite` VALUES (46, 2, 3, '2018-11-08 10:05:41.033693', 1);
+INSERT INTO `operation_userfavorite` VALUES (47, 10, 1, '2018-11-08 10:45:59.870999', 1);
+INSERT INTO `operation_userfavorite` VALUES (48, 4, 1, '2018-11-08 10:46:10.057215', 1);
+INSERT INTO `operation_userfavorite` VALUES (49, 3, 1, '2018-11-09 10:43:11.433667', 1);
+INSERT INTO `operation_userfavorite` VALUES (50, 2, 2, '2018-11-09 11:56:10.134773', 1);
 
 -- ----------------------------
 -- Table structure for operation_usermessage
@@ -617,13 +635,13 @@ CREATE TABLE `organization_courseorg`  (
 -- Records of organization_courseorg
 -- ----------------------------
 INSERT INTO `organization_courseorg` VALUES (2, '慕课网', '慕课网是垂直的互联网IT技能免费学习网站。以独家视频教程、在线编程工具、学习计划、问答社区为核心特色。在这里，你可以找到最好的互联网技术牛人，也可以通过免费的在线公开视频课程学习国内领先的互联网IT技术。\r\n　　慕课网课程涵盖前端开发、PHP、Html5、Android、iOS、Swift等IT前沿技术语言，包括基础课程、实用案例、高级分享三大类型，适合不同阶段的学习人群。以纯干货、短视频的形式为平台特点，为在校学生、职场白领提供了一个迅速提升技能、共同分享进步的学习平台。 [1] \r\n　　月2日，国内首个IT技能学习类应用——慕课网3.1.0版本在应用宝首发。据了解，在此次上线的版本中，慕课网新增了课程历史记录、相关课程推荐等四大功能，为用户营造更加丰富的移动端IT学习体验。', 0, 2, 'org/2018/10/imooc_OphEf2V.png', '地址', '2018-10-26 11:03:00.000000', 3, 'pxjg', 0, 333);
-INSERT INTO `organization_courseorg` VALUES (3, '北京大学', '北京大学（Peking University）简称“北大”，诞生于1898年，初名京师大学堂，是中国近代第一所国立大学，也是最早以“大学”之名创办的学校，其成立标志着中国近代高等教育的开端。北大是中国近代以来唯一以国家最高学府身份创立的学校，最初也是国家最高教育行政机关，行使教育部职能，统管全国教育。北大催生了中国最早的现代学制，开创了中国最早的文科、理科、社科、农科、医科等大学学科，是近代以来中国高等教育的奠基者 [1-3]  。\r\n　　1912年5月3日，京师大学堂改称北京大学校，严复为首任校长 [4]  。1917年，蔡元培出任校长，“循思想自由原则、取兼容并包之义”，把北大办成全国学术和思想中心，使北大成为新文化运动中心、五四运动策源地。1937年抗日战争爆发，北大与清华大学、南开大学南迁长沙，组成国立长沙临时大学。不久迁往昆明，改称国立西南联合大学。1946年10月在北平复学 [5]  。\r\n北大由教育部直属，中央直管副部级建制，是国家双一流 [6]  、211工程、985工程 [5]  、2011计划重点建设的全国重点大学，九校联盟 [7]  、中国大学校长联谊会、京港大学联盟 [8]  、亚洲大学联盟 [9]  、东亚研究型大学协会、国际研究型大学联盟、环太平洋大学联盟、东亚四大学论坛、国际公立大学论坛、中俄综合性大学联盟重要成员。 [10-13] \r\n　　北大始终与国家民族的命运紧密相连，聚集了许多学者专家，培养了众多优秀人才，创造了大批重大科学成果，影响和推动了中国近现代思想理论、科学技术、文化教育和社会发展的进程', 22, 1, 'org/2018/10/bjdx.jpg', '北京', '2018-10-26 11:21:00.000000', 1, 'gx', 23424, 0);
+INSERT INTO `organization_courseorg` VALUES (3, '北京大学', '北京大学（Peking University）简称“北大”，诞生于1898年，初名京师大学堂，是中国近代第一所国立大学，也是最早以“大学”之名创办的学校，其成立标志着中国近代高等教育的开端。北大是中国近代以来唯一以国家最高学府身份创立的学校，最初也是国家最高教育行政机关，行使教育部职能，统管全国教育。北大催生了中国最早的现代学制，开创了中国最早的文科、理科、社科、农科、医科等大学学科，是近代以来中国高等教育的奠基者 [1-3]  。\r\n　　1912年5月3日，京师大学堂改称北京大学校，严复为首任校长 [4]  。1917年，蔡元培出任校长，“循思想自由原则、取兼容并包之义”，把北大办成全国学术和思想中心，使北大成为新文化运动中心、五四运动策源地。1937年抗日战争爆发，北大与清华大学、南开大学南迁长沙，组成国立长沙临时大学。不久迁往昆明，改称国立西南联合大学。1946年10月在北平复学 [5]  。\r\n北大由教育部直属，中央直管副部级建制，是国家双一流 [6]  、211工程、985工程 [5]  、2011计划重点建设的全国重点大学，九校联盟 [7]  、中国大学校长联谊会、京港大学联盟 [8]  、亚洲大学联盟 [9]  、东亚研究型大学协会、国际研究型大学联盟、环太平洋大学联盟、东亚四大学论坛、国际公立大学论坛、中俄综合性大学联盟重要成员。 [10-13] \r\n　　北大始终与国家民族的命运紧密相连，聚集了许多学者专家，培养了众多优秀人才，创造了大批重大科学成果，影响和推动了中国近现代思想理论、科学技术、文化教育和社会发展的进程', 22, 2, 'org/2018/10/bjdx.jpg', '北京', '2018-10-26 11:21:00.000000', 1, 'gx', 23424, 0);
 INSERT INTO `organization_courseorg` VALUES (4, '清华大学', '清华大学（Tsinghua University），简称“清华”，由中华人民共和国教育部直属，中央直管副部级建制，位列“211工程”、“985工程”、“世界一流大学和一流学科”，入选“基础学科拔尖学生培养试验计划”、“高等学校创新能力提升计划”、“高等学校学科创新引智计划”，为九校联盟、中国大学校长联谊会、东亚研究型大学协会、亚洲大学联盟、环太平洋大学联盟、清华—剑桥—MIT低碳大学联盟成员，被誉为“红色工程师的摇篮”。\r\n　　清华大学的前身清华学堂始建于1911年，因水木清华而得名，是清政府设立的留美预备学校，其建校的资金源于1908年美国退还的部分庚子赔款。1912年更名为清华学校。1928年更名为国立清华大学。1937年抗日战争全面爆发后南迁长沙，与北京大学、南开大学组建国立长沙临时大学，1938年迁至昆明改名为国立西南联合大学。1946年迁回清华园。1949年中华人民共和国成立，清华大学进入了新的发展阶段。　\r\n　　1952年全国高等学校院系调整后成为多科性工业大学。1978年以来逐步恢复和发展为综合性的研究型大学。\r\n水木清华，钟灵毓秀，清华大学秉持“自强不息、厚德载物”的校训和“行胜于言”的校风，坚持“中西融汇、古今贯通、文理渗透”的办学风格和“又红又专、全面发展”的培养特色，弘扬“爱国奉献、追求卓越”传统和“人文日新”精神。恰如清华园工字厅内对联所书——“槛外山光，历春夏秋冬、万千变幻，都非凡境；窗中云影，任东西南北、去来澹荡，洵是仙居”', 74, 0, 'org/2018/10/qhdx-logo.png', '清华', '2018-10-26 11:25:00.000000', 1, 'gx', 22, 9);
-INSERT INTO `organization_courseorg` VALUES (5, '南京大学', '南京大学（Nanjing University），简称“南大”，是中华人民共和国教育部直属、中央直管副部级建制的综合性全国重点大学，是历史悠久、声誉卓著的百年名校。位列首批国家“双一流“世界一流大学A类建设高校、”211工程“、”985工程”，入选“珠峰计划”、“111计划”、“2011计划”、“卓越工程师教育培养计划”、“卓越医生教育培养计划”、“卓越法律人才教育培养计划”，是九校联盟、中国大学校长联谊会、环太平洋大学联盟、21世纪学术联盟和东亚研究型大学协会成员。 [1] \r\n　　南京大学其学脉可追溯自孙吴永安元年（258年）的南京太学，近代校史肇始于1902年创建的三江师范学堂，此后历经两江师范学堂、南京高等师范学校、国立东南大学等历史时期，1949年由民国时期中国最高学府“国立中央大学”易名“国立南京大学”，1950年径称“南京大学”并沿用至今。1920年在中国国立高等学府中首开“女禁”，引领男女同校之风。最早在中国开展现代学术研究，建立中国最早的现代科学研究实验室，成为中国第一所以大学自治、学术自由、文理为基本兼有农工商等专门应用科、集教学和研究于一体的现代大学，被国际上誉为“东方教育的中心”。 [1] \r\n　　南京大学是中国现代科学的发祥地之一，是哈佛大学白碧德主义影响下的中国“学衡派”的雅集地，被誉为“中国科学社的大本营和科学发展的主要基地”，是“985工程”首批九所高水平大学中唯一未合并其他院校的高校，坚持“内涵发展”，赢得社会“中国最温和的大学”之美誉。', 23, 0, 'org/2018/10/njdx_cVYO8d1.jpg', '南京', '2018-10-26 11:27:00.000000', 6, 'gx', 23, 0);
+INSERT INTO `organization_courseorg` VALUES (5, '南京大学', '南京大学（Nanjing University），简称“南大”，是中华人民共和国教育部直属、中央直管副部级建制的综合性全国重点大学，是历史悠久、声誉卓著的百年名校。位列首批国家“双一流“世界一流大学A类建设高校、”211工程“、”985工程”，入选“珠峰计划”、“111计划”、“2011计划”、“卓越工程师教育培养计划”、“卓越医生教育培养计划”、“卓越法律人才教育培养计划”，是九校联盟、中国大学校长联谊会、环太平洋大学联盟、21世纪学术联盟和东亚研究型大学协会成员。 [1] \r\n　　南京大学其学脉可追溯自孙吴永安元年（258年）的南京太学，近代校史肇始于1902年创建的三江师范学堂，此后历经两江师范学堂、南京高等师范学校、国立东南大学等历史时期，1949年由民国时期中国最高学府“国立中央大学”易名“国立南京大学”，1950年径称“南京大学”并沿用至今。1920年在中国国立高等学府中首开“女禁”，引领男女同校之风。最早在中国开展现代学术研究，建立中国最早的现代科学研究实验室，成为中国第一所以大学自治、学术自由、文理为基本兼有农工商等专门应用科、集教学和研究于一体的现代大学，被国际上誉为“东方教育的中心”。 [1] \r\n　　南京大学是中国现代科学的发祥地之一，是哈佛大学白碧德主义影响下的中国“学衡派”的雅集地，被誉为“中国科学社的大本营和科学发展的主要基地”，是“985工程”首批九所高水平大学中唯一未合并其他院校的高校，坚持“内涵发展”，赢得社会“中国最温和的大学”之美誉。', 23, 1, 'org/2018/10/njdx_cVYO8d1.jpg', '南京', '2018-10-26 11:27:00.000000', 6, 'gx', 23, 0);
 INSERT INTO `organization_courseorg` VALUES (6, '慕课网３', '慕课网是垂直的互联网IT技能免费学习网站。以独家视频教程、在线编程工具、学习计划、问答社区为核心特色。在这里，你可以找到最好的互联网技术牛人，也可以通过免费的在线公开视频课程学习国内领先的互联网IT技术。\r\n　　慕课网课程涵盖前端开发、PHP、Html5、Android、iOS、Swift等IT前沿技术语言，包括基础课程、实用案例、高级分享三大类型，适合不同阶段的学习人群。以纯干货、短视频的形式为平台特点，为在校学生、职场白领提供了一个迅速提升技能、共同分享进步的学习平台。 [1] \r\n　　4月2日，国内首个IT技能学习类应用——慕课网3.1.0版本在应用宝首发。据了解，在此次上线的版本中，慕课网新增了课程历史记录、相关课程推荐等四大功能，为用户营造更加丰富的移动端IT学习体验。', 0, 0, 'org/2018/10/imooc_Gn1sRjp.png', '深圳', '2018-10-26 14:23:00.000000', 3, 'pxjg', 0, 7);
 INSERT INTO `organization_courseorg` VALUES (7, '慕课网２', '慕课网是垂直的互联网IT技能免费学习网站。以独家视频教程、在线编程工具、学习计划、问答社区为核心特色。在这里，你可以找到最好的互联网技术牛人，也可以通过免费的在线公开视频课程学习国内领先的互联网IT技术。\r\n　　慕课网课程涵盖前端开发、PHP、Html5、Android、iOS、Swift等IT前沿技术语言，包括基础课程、实用案例、高级分享三大类型，适合不同阶段的学习人群。以纯干货、短视频的形式为平台特点，为在校学生、职场白领提供了一个迅速提升技能、共同分享进步的学习平台。 [1] \r\n　　4月2日，国内首个IT技能学习类应用——慕课网3.1.0版本在应用宝首发。据了解，在此次上线的版本中，慕课网新增了课程历史记录、相关课程推荐等四大功能，为用户营造更加丰富的移动端IT学习体验。', 0, 0, 'org/2018/10/imooc_Y2Tonsq.png', '南昌', '2018-10-26 14:26:00.000000', 5, 'pxjg', 0, 8);
 INSERT INTO `organization_courseorg` VALUES (8, '慕课网４', '慕课网是垂直的互联网IT技能免费学习网站。以独家视频教程、在线编程工具、学习计划、问答社区为核心特色。在这里，你可以找到最好的互联网技术牛人，也可以通过免费的在线公开视频课程学习国内领先的互联网IT技术。\r\n　　慕课网课程涵盖前端开发、PHP、Html5、Android、iOS、Swift等IT前沿技术语言，包括基础课程、实用案例、高级分享三大类型，适合不同阶段的学习人群。以纯干货、短视频的形式为平台特点，为在校学生、职场白领提供了一个迅速提升技能、共同分享进步的学习平台。 [1] \r\n　　4月2日，国内首个IT技能学习类应用——慕课网3.1.0版本在应用宝首发。据了解，在此次上线的版本中，慕课网新增了课程历史记录、相关课程推荐等四大功能，为用户营造更加丰富的移动端IT学习体验。', 0, 0, 'org/2018/10/imooc_V0TJOyb.png', '广州', '2018-10-26 14:26:00.000000', 4, 'pxjg', 0, 0);
-INSERT INTO `organization_courseorg` VALUES (9, '赖鹏', '个人机构', 12, 0, 'org/2018/10/njdx_5mqeUvv.jpg', '上海', '2018-10-26 14:29:00.000000', 2, 'gr', 0, 88);
+INSERT INTO `organization_courseorg` VALUES (9, '赖鹏', '个人机构', 12, 1, 'org/2018/10/njdx_5mqeUvv.jpg', '上海', '2018-10-26 14:29:00.000000', 2, 'gr', 0, 88);
 INSERT INTO `organization_courseorg` VALUES (10, '廖雪峰', 'python', 0, 0, 'org/2018/10/bjdx_cCpdUw8.jpg', '上海', '2018-10-26 14:30:00.000000', 2, 'gr', 77, 123);
 INSERT INTO `organization_courseorg` VALUES (11, 'boby', 'django web', 0, 0, 'org/2018/10/imooc_Gn1sRjp_UPSE69R.png', '上海', '2018-10-26 14:31:00.000000', 2, 'gr', 0, 0);
 
@@ -643,6 +661,7 @@ CREATE TABLE `organization_teacher`  (
   `add_time` datetime(6) NOT NULL,
   `org_id` int(11) NOT NULL,
   `image` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `age` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `organization_teache_org_id_cd000a1a_fk_organization_courseorg_id`(`org_id`) USING BTREE,
   CONSTRAINT `organization_teache_org_id_cd000a1a_fk_organization_courseorg_id` FOREIGN KEY (`org_id`) REFERENCES `organization_courseorg` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -651,8 +670,8 @@ CREATE TABLE `organization_teacher`  (
 -- ----------------------------
 -- Records of organization_teacher
 -- ----------------------------
-INSERT INTO `organization_teacher` VALUES (1, 'boby', 4, 'xxxx', 'xxxx', 'xxx', 0, 0, '2018-10-29 16:06:00.000000', 2, 'teacher/2018/10/aobama_CXWwMef.png');
-INSERT INTO `organization_teacher` VALUES (2, 'lp', 6, 'xxxx', 'xxxx', 'xxxx', 0, 0, '2018-10-29 16:06:00.000000', 2, 'teacher/2018/10/aobama.png');
+INSERT INTO `organization_teacher` VALUES (1, 'jacklove', 4, '阿里巴巴', 'python web', '生动', 12, 124, '2018-10-29 16:06:00.000000', 2, 'teacher/2018/10/aobama_CXWwMef.png', 34);
+INSERT INTO `organization_teacher` VALUES (2, 'lp', 6, '腾讯', 'java web', 'youmo', 13, 346, '2018-10-29 16:06:00.000000', 3, 'teacher/2018/10/aobama.png', 36);
 
 -- ----------------------------
 -- Table structure for reversion_revision
@@ -715,13 +734,15 @@ CREATE TABLE `users_emailverifyrecord`  (
   `send_type` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `send_time` datetime(6) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users_emailverifyrecord
 -- ----------------------------
 INSERT INTO `users_emailverifyrecord` VALUES (4, 'LDh4U5F0', '2@2.com', 'register', '2018-10-23 18:37:25.696107');
 INSERT INTO `users_emailverifyrecord` VALUES (12, 'QYUOKrOk', '237290082@qq.com', 'forget', '2018-10-24 11:28:38.239473');
+INSERT INTO `users_emailverifyrecord` VALUES (15, 'aNtx', '', 'update_email', '2018-11-07 15:18:29.185348');
+INSERT INTO `users_emailverifyrecord` VALUES (17, 'r0Mj', '18702529877@163.c0m', 'update_email', '2018-11-07 16:26:23.341852');
 
 -- ----------------------------
 -- Table structure for users_userprofile
@@ -752,7 +773,7 @@ CREATE TABLE `users_userprofile`  (
 -- ----------------------------
 -- Records of users_userprofile
 -- ----------------------------
-INSERT INTO `users_userprofile` VALUES (1, 'pbkdf2_sha256$24000$qcqhYOwQdxlm$obsiZYz8gSRjzKmL8qfmPZt/y81u56Q4Ipghfe2T8t8=', '2018-10-26 10:35:56.321042', 1, 'python', '', '', '1@1.com', 1, 1, '2018-10-18 09:16:48.530690', '', NULL, 'female', '', NULL, 'image/default.png');
+INSERT INTO `users_userprofile` VALUES (1, 'pbkdf2_sha256$24000$flNEIEhNvQZl$2A7t5UmXS4RGCnhLrDb2r1UEwlvUGPBsZXQBbpR+W2Y=', '2018-11-09 09:26:47.834986', 1, 'python', '', '', '18702529877@163.com', 1, 1, '2018-10-18 09:16:48.530690', 'niaso', '2018-11-06', 'male', 'sasa', '1870252987', 'image/2018/11/default_middile_1_20161113172604_856.png');
 INSERT INTO `users_userprofile` VALUES (6, 'pbkdf2_sha256$24000$IoDNwuHHiulo$hPcKevQKv9ET+U1bC0E0r13g5+BNBGjSQs33jNS37zk=', NULL, 0, '2@2.com', '', '', '2@2.com', 0, 0, '2018-10-23 18:37:25.611365', '', NULL, 'female', '', NULL, 'image/default.png');
 INSERT INTO `users_userprofile` VALUES (10, 'pbkdf2_sha256$24000$wum6m4U2Z3Pw$nRTZ9jMj4y3qlbSojeIqdlpJ/bO3B0w7I3mCkXPzgoM=', '2018-10-24 14:46:30.403007', 0, '237290082@qq.com', '', '', '237290082@qq.com', 0, 1, '2018-10-24 11:24:55.958233', '', NULL, 'female', '', NULL, 'image/default.png');
 
@@ -824,7 +845,7 @@ CREATE TABLE `xadmin_log`  (
   INDEX `xadmin_log_user_id_bb16a176_fk_users_userprofile_id`(`user_id`) USING BTREE,
   CONSTRAINT `xadmin_log_content_type_id_2a6cb852_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `xadmin_log_user_id_bb16a176_fk_users_userprofile_id` FOREIGN KEY (`user_id`) REFERENCES `users_userprofile` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 69 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 74 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of xadmin_log
@@ -896,6 +917,11 @@ INSERT INTO `xadmin_log` VALUES (65, '2018-10-30 20:18:12.740367', '127.0.0.1', 
 INSERT INTO `xadmin_log` VALUES (66, '2018-10-30 20:30:21.137225', '127.0.0.1', '1', '前段资源', 'create', '已添加', 12, 1);
 INSERT INTO `xadmin_log` VALUES (67, '2018-10-30 20:31:51.471078', '127.0.0.1', '2', 'html文件', 'create', '已添加', 12, 1);
 INSERT INTO `xadmin_log` VALUES (68, '2018-10-30 21:08:00.466568', '127.0.0.1', '1', 'django与vue', 'change', '已修改 teacher 。', 9, 1);
+INSERT INTO `xadmin_log` VALUES (69, '2018-11-04 17:43:14.035981', '127.0.0.1', '13', 'java入门1', 'change', '已修改 teacher，youneed 和 teacher_tell 。', 9, 1);
+INSERT INTO `xadmin_log` VALUES (70, '2018-11-04 17:43:41.865674', '127.0.0.1', '12', 'numpy', 'change', '已修改 teacher，tag，youneed 和 teacher_tell 。', 9, 1);
+INSERT INTO `xadmin_log` VALUES (71, '2018-11-04 17:44:12.597032', '127.0.0.1', '11', 'scrapy', 'change', '已修改 teacher，tag，youneed 和 teacher_tell 。', 9, 1);
+INSERT INTO `xadmin_log` VALUES (72, '2018-11-04 17:45:09.395965', '127.0.0.1', '2', 'lp', 'change', '已修改 org 。', 15, 1);
+INSERT INTO `xadmin_log` VALUES (73, '2018-11-08 10:06:57.285019', '127.0.0.1', '10', 'Flask', 'change', '已修改 teacher，tag，youneed 和 teacher_tell 。', 9, 1);
 
 -- ----------------------------
 -- Table structure for xadmin_usersettings

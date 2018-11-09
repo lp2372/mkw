@@ -9,7 +9,6 @@ from operation.models import UserFavorite,Teacher
 from courses.models import Course
 
 
-
 class OrgView(View):
     """课程机构列表"""
     def get(self,request):
@@ -65,7 +64,6 @@ class AddUserAskView(View):
         else:
             return JsonResponse({'status':'fail','msg':'添加失败'})
 
-
 class OrgHomeView(View):
 
     def get(self,request,org_id):
@@ -106,7 +104,6 @@ class OrgCourseView(View):
             'current_page': current_page,
             'has_fav': has_fav
         })
-
 
 class OrgDescView(View):
 
@@ -195,3 +192,58 @@ class AddFavView(View):
             return JsonResponse({"status": "success", "msg": "已收藏"})
         else:
             return JsonResponse({"status": "fail", "msg": "收藏出错"})
+
+class TeacherListView(View):
+
+    def get(self,request):
+
+        teacher_list = Teacher.objects.all()
+        teacher_count = teacher_list.count()
+        hot_teachers = teacher_list.order_by('-click_num')[:3]
+        sort = request.GET.get('sort','')
+        if sort == 'hot':
+            teacher_list = teacher_list.order_by('-click_num')
+        try:
+            page = request.GET.get('page', 1)
+        except PageNotAnInteger:
+            page = 1
+
+
+        p = Paginator(teacher_list,1, request=request)
+
+        teachers = p.page(page)
+
+        return render(request,'teachers-list.html',{
+            'teacher_list':teachers,
+            'teacher_count':teacher_count,
+            'sort':sort,
+            'hot_teachers':hot_teachers
+        })
+
+class TeacherDetailView(View):
+
+    def get(self,request,teacher_id):
+
+        teacher = Teacher.objects.get(id=teacher_id)
+        courses = Course.objects.filter(teacher=teacher)
+        hot_teachers = Teacher.objects.all().order_by('-click_num')[:3]
+
+        has_fav_teacher =False
+        has_fav_org = False
+
+        if request.user.is_authenticated():
+            fav_teacher = UserFavorite.objects.filter(user=request.user,fav_id=teacher.id,fav_type=3)
+            fav_org = UserFavorite.objects.filter(user=request.user,fav_id=teacher.org.id,fav_type=2)
+            if fav_teacher:
+                has_fav_teacher = True
+            if fav_org:
+                has_fav_org = True
+
+
+        return render(request,'teacher-detail.html',{
+            'teacher':teacher,
+            'courses':courses,
+            'hot_teachers':hot_teachers,
+            'has_fav_teacher':has_fav_teacher,
+            'has_fav_org':has_fav_org
+        })

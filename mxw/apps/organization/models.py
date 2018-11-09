@@ -51,6 +51,7 @@ class Teacher(models.Model):
     click_num = models.IntegerField(default=0,verbose_name='点击量')
     fav_num = models.IntegerField(default=0,verbose_name='收藏数')
     add_time = models.DateTimeField(default=datetime.now)
+    age = models.IntegerField(default=18,verbose_name='年龄')
     image = models.ImageField(upload_to="teacher/%Y/%m",verbose_name='教师头像',null=True,blank=True)
 
     class Meta:
@@ -59,3 +60,6 @@ class Teacher(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_course_nums(self):
+        return self.course_set.all().count()

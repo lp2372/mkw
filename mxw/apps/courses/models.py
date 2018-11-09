@@ -7,7 +7,6 @@ from organization.models import CourseOrg,Teacher
 
 # Create your models here.
 
-
 class Course(models.Model):
     teacher = models.ForeignKey(Teacher,verbose_name='授课讲师',blank=True,null=True)
     course_org = models.ForeignKey(CourseOrg,verbose_name='课程机构',null=True,blank=True)
@@ -43,7 +42,6 @@ class Course(models.Model):
 
     def get_lesson(self):
         return self.lesson_set.all()
-
 
 class Lesson(models.Model):
     course = models.ForeignKey(Course,verbose_name='课程')

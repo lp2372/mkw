@@ -39,4 +39,5 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)',serve,{'document_root':MEDIA_ROOT}),
 
     url(r'^course/',include('courses.urls',namespace='course')),
+    url(r'^user/',include('users.urls',namespace='user')),
 ]

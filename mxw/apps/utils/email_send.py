@@ -22,6 +22,7 @@ def send_email(email,send_type='register'):
     if email_records:
         for email_obj in email_records:
             email_obj.delete()
+
     code = random_str()
     email_record = EmailVerifyRecord()
     email_record.code = code
@@ -43,6 +44,12 @@ def send_email(email,send_type='register'):
         status = send_mail(email_title, email_body, EMAIL_FROM, [email])
         if status:
             print('TRUE')
+    elif send_type == 'update_email':
+        email_title = "慕学在线网修改邮箱"
+        email_body = "邮箱验证码：{0}".format(code)
 
+        status = send_mail(email_title, email_body, EMAIL_FROM, [email])
+        if status:
+            print('TRUE')
 
 
